@@ -1,31 +1,58 @@
 package phonebook;
 
+
 //PROPERTIES OR ATTRIBUTES
-public class Person {
+public class Person{
 
 	private String firstName;
 	private String lastName;
 	private String fullName;
-	private PhoneNumber[] phoneNumber = {};
+	//protected PhoneNumber[] phoneNumber = {}; ////WORKS OK TOO
+	private PhoneNumber[] phoneNumber = {};/////TRY THIS
+	//private String phoneNumber;//added this then changed line 35
 	Address myAddress; // use this instead which is the Address Class.
-	public String setStreetName; //this is system suggested...delete if it doesn't work.
-	public String setStreetNum;
+	public String setStreetNum; //this is what the system suggested...delete if it doesn't work.
+	public String setStreetName;
+	public String setCity;
+	public String setState;
+	public String setZipCode;
+	Directory myDirectory;
 	
 	
 	// DEFAULT CONSTRUCTOR
 	public Person() {
+		super();
 	}
 
-	// PARAMEETERIZED CONSTRUCTOR
-	public Person(String fName, String lName) {
+	// PARAMETERIZED CONSTRUCTOR
+	public Person(String fName, String lName, String streetNum, String streetName, String city, String state, String zipCode, PhoneNumber[] pNumber) {
 		this.firstName = fName;
 		this.lastName = lName;
+		this.setStreetNum=streetNum;
+		this.setStreetName=streetName;
+		this.setCity=city;
+		this.setState=state;
+		this.setZipCode=zipCode;
+		this.phoneNumber=pNumber;
+	}
+
+	// MY toSTRING CODE
+	public String toString() {
+		return (firstName + " "  + lastName + " " + phoneNumber);
+	}	
+	
+	public Directory getMyDirectory() {
+		return myDirectory;
+	}
+
+	public void setMyDirectory(Directory myDirectory) {
+		this.myDirectory = myDirectory;
 	}
 
 	// THE "toString()" METHOD FOR PERSON
-	public String toString() {
+	/*public String toString() {
 		return ("First Name=" + " " + firstName + " " + "\nLast name=" + " " + lastName);
-	}
+	} */
 
 	// GETTERS ONLY
 	public String getFirstName() {
@@ -95,7 +122,7 @@ public class Person {
 
 	public void printPerson() {
 		System.out.println(getFirstName() + getLastName());
-		myAddress.printAddress();
+		//myAddress.printAddress();
 
 		for (int i = 0; i < phoneNumber.length; i++) {
 			System.out.println("Phone Number: ");
@@ -104,14 +131,18 @@ public class Person {
 		}
 
 	}
-
+	
+	
 	public void setStreetNum(String next) {
 			
 	}
 
 	public void getPerson() {
-		// TODO Auto-generated method stub
 		
 	}
 
+	public void addPhoneNumber(String string) {
+		// TODO Auto-generated method stub
+	}	
+	
 }

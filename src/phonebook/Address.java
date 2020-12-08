@@ -10,7 +10,7 @@ public class Address {
 		
 		
 		public Address() {
-			
+			super();
 		}
 		
 		public Address(String streetNum, String streetName, String city, String state, String zipCode) {
@@ -46,7 +46,7 @@ public class Address {
 		public void setStreetName(String streetName) {
 			this.streetName = streetName;
 		}
-
+ 
 		public String getCity() {
 			return city;
 		}
